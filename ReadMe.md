@@ -1,5 +1,6 @@
 ### Contrastive spectra matching 
-This repository provides the implementation for our paper " ". We experimentally show that we significantly outperform existing approaches for Raman spectra matching on three publically available datasets. 
+This repository provides the implementation for our paper "Raman spectra matching with contrastive representation learning". We experimentally show that we significantly outperform or is on par with the existing approaches for Raman spectra identification on three publically available datasets. 
+![](concept.png)
 
 #### Requirement 
 ```bash
@@ -32,7 +33,6 @@ index:
 	figure_example_spectra -> Figure 1 & 2 
 	figure_augmentation_example -> Figure 3
 	qualitative_results -> Figure 6
-	figure_uncertainty -> Figure 7 
 	conformal_prediction_correlation -> Figure 8
 	figure_motivation_conformal_prediction -> Figure 9 
 	table_overall_performance -> Table 2
@@ -42,6 +42,4 @@ index:
 #### Todo
 - [ ] Upload datasets to DTU data
 - [ ] Upload checkpoints to DTU data
-- [ ] Double check the training scripts
-- [ ] Add a table-of-content figure
 
