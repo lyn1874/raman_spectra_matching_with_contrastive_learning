@@ -29,15 +29,6 @@ The `repeat_g` in each script represents the number of models that are used for 
 
 ```python
 python paper_figures.py --index figure_augmentation_example --save False --pdf_pgf pdf
-"""Argument:
-index:
-	figure_example_spectra -> Figure 1 & 2 
-	figure_augmentation_example -> Figure 3
-	qualitative_results -> Figure 6
-	conformal_prediction_correlation -> Figure 8
-	figure_motivation_conformal_prediction -> Figure 9 
-	table_overall_performance -> Table 2
-"""
 ```
 
 #### Todo
