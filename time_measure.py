@@ -10,7 +10,7 @@ from scipy.special import softmax
 import matplotlib.pyplot as plt
 import time
 
-dir2read_exp = "../exp_data/exp_group/"  # USER DEFINE
+dir2read_exp = "../exp_data/exp_time/"  # USER DEFINE
 dir2read_data = "../data_group/"  # USER DEFINE
 
 
@@ -39,6 +39,9 @@ def measure_time(raman_type):
     group_index = [np.where(tr_data[1] == i)[0] for i in np.unique(tt_data[1])]
     prediction_g, string_use = test.add_ensemble(prediction_g, string_use, False, group_index, tr_data[1], tt_data[1])
     print("================================================================================")
+    print(time_group)
+    time_group = time_group[1:]
     print("There are %d test spectra and %d reference spectra" % (len(tt_data[0]), len(tr_data[0])))
     print("The average time per spectrum", np.mean(time_group) / len(tt_data[0]))
+    print("FPS: %d" % ( 1 / np.mean(time_group) * len(tt_data[0])))
     
