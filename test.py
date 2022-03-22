@@ -10,6 +10,7 @@ import os
 import model.model_inception as model_inception
 import data.prepare_data as pdd
 import vis_utils as vu
+import time
 
 
 def get_freer_gpu():
@@ -47,9 +48,11 @@ def get_model_baseon_modeldir(args, model_dir, data_group, print_info=True):
                                     stem_kernel=stem_kernel, stem_max_dim=stem_max_dim,
                                     depth=depth, print_model=print_info)
     testfunc = Test(args, sim_model, [tr_spectrum, tt_spectrum], [tr_label, tt_label], label_name)
+    time_init = time.time()
     prediction, accu = testfunc.get_prediction_within_batch(tt_spectrum, tt_label, print_info=print_info)
+    time_end = time.time()
     del testfunc.reference_features
-    return prediction, accu
+    return prediction, accu, time_end - time_init
 
 
 def get_model_inception(wavenumber, distance_aggregation, model_dir,
@@ -143,6 +146,7 @@ class Test(object):
         num = len(spectrum)
         batch_size = [i for i in range(50)[10:] if num % i == 0]
         batch_size = [batch_size[-1] if len(batch_size) > 1 else 50][0]
+        batch_size = num
         num_iter = int(np.ceil(num / batch_size))
         prediction = []
         with torch.no_grad():
@@ -211,7 +215,7 @@ def get_conformal_prediction_threshold(tr_data, val_data, label_name, args, ckpt
     string_val_use = ["ensemble_%d" % i for i in range(len(ckpt_dir))]
     prediction_val_g = {}
     for i, s_ckpt in enumerate(ckpt_dir):
-        prediction, _ = get_model_baseon_modeldir(args, s_ckpt,
+        prediction, _, _ = get_model_baseon_modeldir(args, s_ckpt,
                                                   [reference_val_data, val_data, label_name],
                                                   print_info=False)
         prediction_val_g[string_val_use[i]] = prediction
