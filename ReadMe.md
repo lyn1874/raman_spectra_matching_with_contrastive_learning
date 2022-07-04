@@ -31,20 +31,25 @@ The `repeat_g` in each script represents the number of models that are used for 
 python paper_figures.py --index figure_augmentation_example --save False --pdf_pgf pdf
 ```
 
-#### Todo
-- [ ] Upload datasets to DTU data
-- [ ] Upload checkpoints to DTU data
+#### Dataset
+
+You can download the Mineral and Organic dataset here: https://data.dtu.dk/articles/dataset/Datasets_for_replicating_the_paper_Raman_Spectrum_Matching_with_Contrastive_Representation_Learning_/20222331 As for the Bacteria dataset, you can visit the official repository https://github.com/csho33/bacteria-ID for downloading the dataset.  
+
 
 #### Citation
 If you use this code, please cite:
 ```
-@misc{li2022raman,
-      title={Raman Spectrum Matching with Contrastive Representation Learning}, 
-      author={Bo Li and Mikkel N. Schmidt and Tommy S. Alstrøm},
-      year={2022},
-      eprint={2202.12549},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@Article{D2AN00403H,
+author ="Li, Bo and Schmidt, Mikkel N. and Alstrøm, Tommy S.",
+title  ="Raman spectrum matching with contrastive representation learning",
+journal  ="Analyst",
+year  ="2022",
+volume  ="147",
+issue  ="10",
+pages  ="2238-2246",
+publisher  ="The Royal Society of Chemistry",
+doi  ="10.1039/D2AN00403H",
+url  ="http://dx.doi.org/10.1039/D2AN00403H",
 }
 ```
 
