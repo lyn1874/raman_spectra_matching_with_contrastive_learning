@@ -35,6 +35,9 @@ python paper_figures.py --index figure_augmentation_example --save False --pdf_p
 
 You can download the Mineral and Organic dataset here: https://data.dtu.dk/articles/dataset/Datasets_for_replicating_the_paper_Raman_Spectrum_Matching_with_Contrastive_Representation_Learning_/20222331 As for the Bacteria dataset, you can visit the official repository https://github.com/csho33/bacteria-ID for downloading the dataset.  
 
+#### Experiments
+
+You can download the experiments for each of the datasets here: https://data.dtu.dk/articles/dataset/Experiments_for_replicating_the_paper_Raman_spectrum_matching_with_contrastive_representation_learning_/21590934 
 
 #### Citation
 If you use this code, please cite:
